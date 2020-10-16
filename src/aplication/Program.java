@@ -43,6 +43,13 @@ public class Program {
 		Seller newSeller = new Seller(null, "Rose", "rose@gamil.com", new Date(), 3500.00, new Department(4, null));
 		//sellerDao.insert(newSeller);		
 		System.out.println(newSeller);
+		
+		
+		System.out.println("TESTE 5 seller upate \n============================================================");
+		Seller upSeller = sellerDao.findById(1);
+		upSeller.setName("Jose");
+		sellerDao.update(upSeller);
+		System.out.println("Complete update!");
 
 		DB.closeConnection();
 	}
