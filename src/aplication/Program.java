@@ -50,6 +50,10 @@ public class Program {
 		upSeller.setName("Jose");
 		sellerDao.update(upSeller);
 		System.out.println("Complete update!");
+		
+		System.out.println("TESTE 5 delete seller \n============================================================");
+		sellerDao.deleteById(9);
+		System.out.println("Complete delete!");
 
 		DB.closeConnection();
 	}
