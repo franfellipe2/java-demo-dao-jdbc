@@ -14,24 +14,26 @@ public class Program {
 
 		Connection conn = DB.getConnection();
 
-		// TESTE 1 ===========================================
+		System.out.println("TESTE 1 \n============================================================");
 		Seller s = DaoFactory.createSellerDao(conn).findById(4);
 		System.out.println(s);
+		System.out.println();
 
-		// TESTE 2 ===========================================
+		System.out.println("TESTE 2 \n============================================================");
 		//List<Seller> sellers = DaoFactory.createSellerDao(conn).findByDeparmentId(2);
 		List<Seller> sellers = DaoFactory.createSellerDao(conn).findByDeparment(new Department(2, null));
 		for (Seller se : sellers) {
-			System.out.println(String.format("%s[%d,%s, %s, %.2f] - em: (%s(%d))", /**/
-					se.getName(), /**/
-					se.getId(), /**/
-					se.getEmail(), /**/
-					se.getBirthDate(), /**/
-					se.getBaseSalary(), /**/
-					se.getDepartment().getName(), /**/
-					se.getDepartment().getId()));
+			System.out.println(se);
 		}
+		System.out.println();
 
+		System.out.println("TESTE 3 \n============================================================");
+		List<Seller> sellers2 = DaoFactory.createSellerDao(conn).findAll();
+		for (Seller se : sellers2) {
+			System.out.println(se);
+		}
+		System.out.println();
+		
 		DB.closeConnection();
 	}
 

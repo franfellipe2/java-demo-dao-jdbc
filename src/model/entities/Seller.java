@@ -110,8 +110,14 @@ public class Seller implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", departmentId=" + departmentId + ", name=" + name + ", email=" + email
-				+ ", birthDate=" + birthDate + ", baseSalary=" + baseSalary + ", department=" + department + "]";
+		return String.format("%s[%d,%s, %s, %.2f] - em: (%s(%d))", /**/
+				getName(), /**/
+				getId(), /**/
+				getEmail(), /**/
+				getBirthDate(), /**/
+				getBaseSalary(), /**/
+				getDepartment().getName(), /**/
+				getDepartment().getId());
 	}
 	
 
